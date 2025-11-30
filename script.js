@@ -1,102 +1,102 @@
 // =============================
-// Data Dummy (Array of Objects)
+// Data Dokter
 // =============================
-
-// Data dokter
 const doctors = [
     {
         name: "dr. Aisyah Putri, Sp.PD",
         specialist: "Spesialis Penyakit Dalam",
-        schedule: "Senin, Rabu, Jumat — 09.00-13.00",
-        room: "Ruang Poli 03",
-        photo: "https://via.placeholder.com/80x80.png?text=Dr+A"
+        schedule: "Senin, Rabu, Jumat • 09.00–13.00",
+        room: "Poli Penyakit Dalam 1",
+        photo: "https://via.placeholder.com/80x80.png?text=AP"
     },
     {
-        name: "drg. Rama Pratama",
+        name: "dr. Rendy Pratama, Sp.JP",
+        specialist: "Spesialis Jantung & Pembuluh Darah",
+        schedule: "Selasa & Kamis • 16.00–20.00",
+        room: "Klinik Jantung Nexus",
+        photo: "https://via.placeholder.com/80x80.png?text=RP"
+    },
+    {
+        name: "drg. Livia Wulandari",
         specialist: "Dokter Gigi",
-        schedule: "Selasa & Kamis — 10.00-15.00",
-        room: "Ruang Poli 05",
-        photo: "https://via.placeholder.com/80x80.png?text=Dr+G"
+        schedule: "Senin–Sabtu • 10.00–18.00",
+        room: "Poli Gigi & Mulut",
+        photo: "https://via.placeholder.com/80x80.png?text=LW"
     },
     {
-        name: "dr. Nabila Sari, Sp.A",
+        name: "dr. Naufal Akbar, Sp.A",
         specialist: "Spesialis Anak",
-        schedule: "Senin - Sabtu — 08.00-12.00",
-        room: "Ruang Poli 02",
-        photo: "https://via.placeholder.com/80x80.png?text=Dr+Anak"
+        schedule: "Senin–Sabtu • 08.00–12.00",
+        room: "Poli Anak",
+        photo: "https://via.placeholder.com/80x80.png?text=NA"
     },
     {
-        name: "dr. Bayu Mahendra",
+        name: "dr. Dina Maharani",
         specialist: "Dokter Umum",
-        schedule: "Setiap hari — 08.00-21.00",
-        room: "Ruang Poli 01",
-        photo: "https://via.placeholder.com/80x80.png?text=Dr+U"
+        schedule: "Setiap hari • 08.00–21.00",
+        room: "Poli Umum",
+        photo: "https://via.placeholder.com/80x80.png?text=DM"
     },
     {
         name: "dr. Clara Widya, Sp.KJ",
-        specialist: "Spesialis Kejiwaan",
-        schedule: "Rabu & Jumat — 16.00-20.00",
+        specialist: "Spesialis Kedokteran Jiwa",
+        schedule: "Rabu & Jumat • 17.00–20.00",
         room: "Ruang Konseling",
-        photo: "https://via.placeholder.com/80x80.png?text=Dr+Psik"
-    },
-    {
-        name: "dr. Dimas Prakoso, Sp.OG",
-        specialist: "Spesialis Kandungan",
-        schedule: "Selasa, Kamis, Sabtu — 09.00-13.00",
-        room: "Ruang Poli 06",
-        photo: "https://via.placeholder.com/80x80.png?text=Dr+OG"
+        photo: "https://via.placeholder.com/80x80.png?text=CW"
     }
 ];
 
-// Data layanan & harga
+// =============================
+// Data Layanan & Harga
+// =============================
 const services = [
     {
         id: "umum",
         name: "Konsultasi Dokter Umum",
-        category: "Poli Umum",
-        price: 75000
+        category: "Konsultasi",
+        price: 85000
     },
     {
-        id: "spesialis",
-        name: "Konsultasi Dokter Spesialis",
-        category: "Poli Spesialis",
-        price: 150000
+        id: "jantung",
+        name: "Konsultasi Spesialis Jantung",
+        category: "Konsultasi Spesialis",
+        price: 275000
     },
     {
-        id: "gigi",
-        name: "Pemeriksaan Gigi Dasar",
-        category: "Poli Gigi",
-        price: 100000
+        id: "gigi-bungsu",
+        name: "Pemeriksaan Gigi Bungsu",
+        category: "Gigi & Mulut",
+        price: 195000
     },
     {
-        id: "anak",
-        name: "Konsultasi Dokter Anak",
-        category: "Poli Anak",
-        price: 135000
-    },
-    {
-        id: "lab-basic",
-        name: "Paket Lab Dasar (Darah Lengkap)",
+        id: "kolesterol",
+        name: "Cek Kolesterol Lengkap",
         category: "Laboratorium",
-        price: 180000
+        price: 165000
     },
     {
-        id: "lab-cek-rutin",
-        name: "Cek Gula Darah / Kolesterol",
-        category: "Laboratorium",
-        price: 65000
+        id: "mcu-dasar",
+        name: "Paket Medical Check Up Dasar",
+        category: "Paket MCU",
+        price: 480000
     },
     {
         id: "ekg",
-        name: "Pemeriksaan EKG",
-        category: "Penunjang",
-        price: 210000
+        name: "Pemeriksaan EKG Rutin",
+        category: "Penunjang Diagnostik",
+        price: 230000
     },
     {
-        id: "usg",
-        name: "USG Abdomen / Kehamilan",
-        category: "Penunjang",
-        price: 350000
+        id: "usg-abdomen",
+        name: "USG Abdomen Lengkap",
+        category: "Penunjang Diagnostik",
+        price: 390000
+    },
+    {
+        id: "anak-kontrol",
+        name: "Kontrol Berkala Dokter Anak",
+        category: "Konsultasi Anak",
+        price: 135000
     }
 ];
 
@@ -112,7 +112,7 @@ const formatRupiah = (value) => {
 };
 
 // =============================
-// Render Dokter ke HTML
+// Render Dokter
 // =============================
 const renderDoctors = () => {
     const doctorListEl = document.getElementById("doctorList");
@@ -123,7 +123,7 @@ const renderDoctors = () => {
     doctors.forEach((doc) => {
         const card = document.createElement("article");
         card.className =
-            "flex gap-3 p-2.5 rounded-2xl border border-slate-700/80 bg-slate-900/80 card-hover-soft";
+            "flex gap-3 p-2.5 rounded-2xl border border-slate-700/80 bg-slate-900/85 card-hover-soft";
 
         card.innerHTML = `
             <div class="flex-shrink-0">
@@ -170,7 +170,7 @@ const renderServices = () => {
     selectEl.innerHTML = "";
 
     services.forEach((service) => {
-        // Tabel
+        // Row tabel
         const tr = document.createElement("tr");
         tr.className = "hover:bg-slate-800/80 transition-colors";
 
@@ -191,7 +191,7 @@ const renderServices = () => {
 
         tableBody.appendChild(tr);
 
-        // Select
+        // Option untuk select
         const option = document.createElement("option");
         option.value = service.id;
         option.textContent = `${service.name} (${formatRupiah(service.price)})`;
@@ -211,7 +211,7 @@ const setupTabSwitching = () => {
         sections.forEach((section) => {
             if (section.id === targetId) {
                 section.classList.remove("hidden");
-                // Trigger transition
+                // transition in
                 requestAnimationFrame(() => {
                     section.classList.remove("opacity-0", "translate-y-2");
                     section.classList.add("opacity-100", "translate-y-0");
@@ -227,7 +227,6 @@ const setupTabSwitching = () => {
             }
         });
 
-        // Update nav tab state
         navLinks.forEach((link) => {
             const id = link.getAttribute("data-target");
             if (id === targetId) {
@@ -247,7 +246,6 @@ const setupTabSwitching = () => {
         });
     });
 
-    // Quick nav buttons in hero
     quickNavButtons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -262,7 +260,7 @@ const setupTabSwitching = () => {
 };
 
 // =============================
-// Live Cost Estimator Logic
+// Live Cost Estimator
 // =============================
 const setupCostEstimator = () => {
     const serviceSelect = document.getElementById("serviceSelect");
@@ -297,81 +295,121 @@ const setupCostEstimator = () => {
         const basePrice = selectedService.price;
         let subtotal = basePrice * qty;
 
-        // Diskon/penyesuaian berdasarkan metode pembayaran
         let paymentLabel = "";
         let paymentNote = "";
-        let discountPayment = 0;
+        let coveredByThirdParty = 0;
 
         if (payment === "umum") {
-            paymentLabel = "Pasien Umum";
-            paymentNote = "Tanpa subsidi, tarif normal klinik.";
-        } else if (payment === "bpjs") {
-            paymentLabel = "BPJS (Administrasi)";
-            // Simulasi: hanya biaya admin 20% dari tarif dasar
-            discountPayment = subtotal * 0.8; // 80% ditanggung BPJS
-            subtotal = subtotal * 0.2;
+            paymentLabel = "Pembayaran Umum";
             paymentNote =
-                "Sebagian besar biaya ditanggung BPJS. Estimasi ini hanya memperhitungkan biaya administrasi/selisih.";
+                "Tarif penuh dibayarkan oleh pasien. Estimasi belum termasuk obat dan tindakan tambahan.";
+        } else if (payment === "bpjs") {
+            paymentLabel = "BPJS Kesehatan";
+            // Simulasi: 85% ditanggung BPJS
+            coveredByThirdParty = subtotal * 0.85;
+            subtotal = subtotal * 0.15;
+            paymentNote =
+                "Perhitungan ini menggunakan simulasi 85% biaya ditanggung BPJS. Nilai aktual mengikuti ketentuan faskes dan hak kelas peserta.";
         } else if (payment === "asuransi") {
             paymentLabel = "Asuransi Rekanan";
-            // Simulasi diskon 40% dari tarif dasar
-            discountPayment = subtotal * 0.4;
-            subtotal = subtotal * 0.6;
+            // Simulasi: 50% ditanggung asuransi
+            coveredByThirdParty = subtotal * 0.5;
+            subtotal = subtotal * 0.5;
             paymentNote =
-                "Perhitungan dengan asumsi potongan 40% dari asuransi rekanan. Nilai aktual mengikuti polis.";
+                "Persentase pertanggungan asuransi dapat berbeda antar polis. Angka di atas hanya ilustrasi untuk memudahkan perencanaan.";
         }
 
-        // Estimasi kontrol lanjutan (follow up)
         let followUpCost = 0;
         if (followUp) {
-            followUpCost = basePrice * 0.7; // diskon 30% dari tarif dasar
+            followUpCost = basePrice * 0.7; // 30% diskon
             subtotal += followUpCost;
         }
 
-        // Update UI
         estimateTotalEl.textContent = formatRupiah(subtotal);
 
         const detailLines = [];
-
         detailLines.push(
             `• Layanan: <strong>${selectedService.name}</strong> (${formatRupiah(
                 basePrice
             )} x ${qty})`
         );
-        if (discountPayment > 0) {
+
+        if (coveredByThirdParty > 0) {
             detailLines.push(
-                `• Potongan oleh ${paymentLabel}: sekitar <strong>${formatRupiah(
-                    discountPayment
+                `• Perkiraan tanggungan oleh pihak ketiga: <strong>${formatRupiah(
+                    coveredByThirdParty
                 )}</strong>`
             );
-        } else {
-            detailLines.push(`• Metode pembayaran: <strong>${paymentLabel}</strong>`);
         }
 
         if (followUp) {
             detailLines.push(
-                `• Estimasi kontrol lanjutan: <strong>${formatRupiah(
+                `• Estimasi 1x kontrol lanjutan: <strong>${formatRupiah(
                     followUpCost
                 )}</strong> (diskon 30% dari tarif dasar)`
             );
         }
 
         detailLines.push(
-            `• Catatan: ${paymentNote} Nilai ini bersifat <strong>estimasi</strong> dan dapat berubah sesuai tindakan tambahan & kebijakan klinik.`
+            `• Metode pembayaran: <strong>${paymentLabel}</strong>`
+        );
+        detailLines.push(
+            `• Catatan: ${paymentNote} Estimasi ini bukan merupakan tagihan resmi dan akan dikonfirmasi kembali oleh petugas di loket pembayaran.`
         );
 
         estimateDetailEl.innerHTML = detailLines.join("<br>");
     };
 
-    // Event listeners
     calculateBtn.addEventListener("click", calculate);
     serviceSelect.addEventListener("change", calculate);
     quantityInput.addEventListener("input", calculate);
     paymentType.addEventListener("change", calculate);
     followUpCheck.addEventListener("change", calculate);
 
-    // Inisialisasi pertama kali
+    // Inisialisasi awal
     calculate();
+};
+
+// =============================
+// Queue System (Status Antrean)
+// =============================
+const setupQueueSystem = () => {
+    const takeQueueBtn = document.getElementById("takeQueueBtn");
+    const queueNumberHeader = document.getElementById("queueNumberHeader");
+    const queueStatusHeader = document.getElementById("queueStatusHeader");
+    const queueNumberCard = document.getElementById("queueNumberCard");
+    const queueStatusCard = document.getElementById("queueStatusCard");
+
+    if (!takeQueueBtn || !queueNumberHeader || !queueStatusHeader || !queueNumberCard || !queueStatusCard) {
+        return;
+    }
+
+    let currentQueue = 0;
+
+    const formatQueueNumber = (num) => {
+        return `A-${String(num).padStart(3, "0")}`;
+    };
+
+    const updateQueueDisplay = () => {
+        const formatted = formatQueueNumber(currentQueue);
+
+        queueNumberHeader.textContent = formatted;
+        queueNumberCard.textContent = formatted;
+
+        queueStatusHeader.textContent = "Antrean Aktif";
+        queueStatusCard.textContent =
+            "Nomor Anda sudah aktif. Silakan menunggu di area tunggu.";
+
+        // Animasi kecil saat nomor baru muncul
+        queueNumberCard.classList.remove("queue-pulse");
+        void queueNumberCard.offsetWidth; // reflow
+        queueNumberCard.classList.add("queue-pulse");
+    };
+
+    takeQueueBtn.addEventListener("click", () => {
+        currentQueue += 1;
+        updateQueueDisplay();
+    });
 };
 
 // =============================
@@ -382,4 +420,5 @@ document.addEventListener("DOMContentLoaded", () => {
     renderServices();
     setupTabSwitching();
     setupCostEstimator();
+    setupQueueSystem();
 });
