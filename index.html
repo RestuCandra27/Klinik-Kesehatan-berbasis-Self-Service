@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Care - Klinik Kesehatan</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tailwind custom config (optional) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nexus-teal': '#14b8a6',
+                        'nexus-teal-soft': '#22c1b7',
+                        'nexus-dark': '#020617'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-50 min-h-screen font-sans antialiased">
+    <!-- Background gradient -->
+    <div class="fixed inset-0 -z-10 bg-gradient-to-br from-slate-900 via-slate-950 to-cyan-900 opacity-95"></div>
+
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-20 backdrop-blur-lg bg-slate-900/60 border-b border-slate-800/60 shadow-md"
+    >
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Brand -->
+            <div class="flex items-center gap-2">
+                <div
+                    class="h-9 w-9 rounded-2xl bg-gradient-to-br from-nexus-teal-soft to-cyan-500 flex items-center justify-center shadow-lg"
+                >
+                    <i class="fa-solid fa-heart-pulse text-slate-900 text-lg"></i>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold tracking-wide text-cyan-300">
+                        NEXUS CARE
+                    </p>
+                    <p class="text-xs text-slate-400">
+                        Smart Clinic Experience
+                    </p>
+                </div>
+            </div>
+
+            <!-- Nav menu -->
+            <div class="flex items-center gap-1 text-sm">
+                <button
+                    class="nav-link tab-active px-3 py-1.5 rounded-full hover:bg-cyan-500/15 text-cyan-300 font-medium transition-all duration-200"
+                    data-target="beranda"
+                >
+                    <i class="fa-solid fa-house-chimney text-[11px] mr-1.5"></i> Beranda
+                </button>
+                <button
+                    class="nav-link px-3 py-1.5 rounded-full hover:bg-cyan-500/15 text-slate-300 transition-all duration-200"
+                    data-target="profil"
+                >
+                    <i class="fa-solid fa-circle-info text-[11px] mr-1.5"></i> Profil
+                </button>
+                <button
+                    class="nav-link px-3 py-1.5 rounded-full hover:bg-cyan-500/15 text-slate-300 transition-all duration-200"
+                    data-target="htm"
+                >
+                    <i class="fa-solid fa-receipt text-[11px] mr-1.5"></i> HTM
+                </button>
+                <button
+                    class="nav-link px-3 py-1.5 rounded-full hover:bg-cyan-500/15 text-slate-300 transition-all duration-200"
+                    data-target="kontak"
+                >
+                    <i class="fa-solid fa-headset text-[11px] mr-1.5"></i> Kontak
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main wrapper -->
+    <main class="max-w-6xl mx-auto px-4 pt-6 pb-10">
+        <!-- Hero Section -->
+        <section class="mb-6 grid md:grid-cols-[1.3fr,1fr] gap-4 items-center">
+            <!-- Left: text -->
+            <div class="space-y-3">
+                <p class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                    <i class="fa-solid fa-circle-check text-[10px]"></i>
+                    Klinik Modern & Terintegrasi
+                </p>
+                <h1 class="text-2xl md:text-3xl font-semibold leading-snug">
+                    Nexus Care — Klinik Kesehatan
+                    <span class="text-cyan-300">berbasis Self-Service</span>
+                </h1>
+                <p class="text-sm text-slate-300 max-w-xl">
+                    Cek dokter, jadwal, layanan, dan estimasi biaya secara mandiri.
+                    Desain seperti <span class="font-semibold text-cyan-300">kiosk digital</span> membuat
+                    pengalaman pendaftaran lebih cepat dan minim antre.
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-1">
+                    <button
+                        class="quick-nav inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-nexus-teal-soft to-cyan-500 text-slate-900 text-sm font-semibold shadow-lg shadow-cyan-500/30 hover:scale-[1.02] active:scale-95 transition"
+                        data-target="htm"
+                    >
+                        <i class="fa-solid fa-calculator text-xs"></i>
+                        Estimasi Biaya
+                    </button>
+                    <button
+                        class="quick-nav inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-slate-800/80 border border-slate-700 text-slate-100 text-sm hover:border-cyan-400/70 hover:text-cyan-200 transition"
+                        data-target="kontak"
+                    >
+                        <i class="fa-solid fa-location-dot text-xs"></i>
+                        Lokasi & Kontak
+                    </button>
+                </div>
+
+                <!-- Mini stats -->
+                <div class="flex flex-wrap gap-3 text-xs pt-1">
+                    <div class="glass-badge">
+                        <i class="fa-solid fa-user-doctor mr-1.5 text-cyan-300"></i>
+                        8+ Dokter Spesialis
+                    </div>
+                    <div class="glass-badge">
+                        <i class="fa-solid fa-clock mr-1.5 text-cyan-300"></i>
+                        Buka 08.00 - 21.00
+                    </div>
+                    <div class="glass-badge">
+                        <i class="fa-solid fa-shield-heart mr-1.5 text-cyan-300"></i>
+                        BPJS & Asuransi Rekanan
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: kiosk-like card -->
+            <div class="hidden md:block">
+                <div
+                    class="glass-card p-4 rounded-3xl border border-cyan-500/20 shadow-xl max-w-sm ml-auto"
+                >
+                    <div class="flex items-center justify-between mb-2">
+                        <p class="text-xs font-semibold text-slate-200">
+                            Status Antrian
+                        </p>
+                        <span
+                            class="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 text-[11px] border border-emerald-500/30"
+                        >
+                            Online Check-in
+                        </span>
+                    </div>
+                    <div class="flex items-end justify-between mb-3">
+                        <div>
+                            <p class="text-[11px] text-slate-400 mb-1">Nomor Anda</p>
+                            <p class="text-3xl font-semibold tracking-[0.25em]">
+                                A-12
+                            </p>
+                        </div>
+                        <div class="text-right text-xs text-slate-300">
+                            <p>Perkiraan panggil</p>
+                            <p class="font-semibold text-cyan-300">+10 menit</p>
+                        </div>
+                    </div>
+
+                    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/60 to-transparent mb-3"></div>
+
+                    <div class="space-y-1.5 text-[11px]">
+                        <p class="flex items-center justify-between">
+                            <span class="text-slate-300">Poli tujuan</span>
+                            <span class="font-medium text-cyan-200"
+                                >Penyakit Dalam</span
+                            >
+                        </p>
+                        <p class="flex items-center justify-between">
+                            <span class="text-slate-300">Estimasi biaya</span>
+                            <span class="font-semibold text-emerald-300"
+                                >Rp250.000*</span
+                            >
+                        </p>
+                        <p class="text-[10px] text-slate-500">
+                            *Belum termasuk tindakan & obat. Gunakan estimator di
+                            bawah untuk simulasi detail.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Container (SPA) -->
+        <section
+            id="content-container"
+            class="glass-card rounded-3xl border border-slate-700/60 p-4 md:p-5 shadow-xl"
+        >
+            <!-- Section: Beranda -->
+            <div
+                id="beranda"
+                class="spa-section transition-all duration-300 ease-out opacity-100 translate-y-0"
+            >
+                <div class="flex flex-col md:flex-row gap-4">
+                    <!-- Left: highlight info -->
+                    <div class="md:w-5/12 space-y-3">
+                        <h2 class="text-lg font-semibold flex items-center gap-2">
+                            <span
+                                class="inline-flex h-7 w-7 rounded-xl bg-cyan-500/15 items-center justify-center"
+                            >
+                                <i class="fa-solid fa-tablet-screen-button text-cyan-300 text-xs"></i>
+                            </span>
+                            Beranda Nexus Care
+                        </h2>
+                        <p class="text-sm text-slate-300">
+                            Selamat datang di <span class="font-semibold text-cyan-300">Nexus Care</span>.
+                            Di tampilan ini, pasien dapat melihat daftar dokter,
+                            layanan utama, hingga estimasi biaya secara interaktif
+                            layaknya kiosk self-service di lobi klinik.
+                        </p>
+
+                        <ul class="text-sm text-slate-300 space-y-1">
+                            <li class="flex gap-2">
+                                <i class="fa-solid fa-check text-emerald-400 mt-[3px] text-[11px]"></i>
+                                Pendaftaran cepat tanpa perlu isi formulir berulang.
+                            </li>
+                            <li class="flex gap-2">
+                                <i class="fa-solid fa-check text-emerald-400 mt-[3px] text-[11px]"></i>
+                                Estimasi biaya transparan sebelum ke loket kasir.
+                            </li>
+                            <li class="flex gap-2">
+                                <i class="fa-solid fa-check text-emerald-400 mt-[3px] text-[11px]"></i>
+                                Informasi dokter dan poli dengan tampilan ringkas.
+                            </li>
+                        </ul>
+
+                        <div class="mt-2 text-xs text-slate-400">
+                            Tips: gunakan tombol di bar atas untuk berpindah tab
+                            tanpa reload halaman (SPA).
+                        </div>
+                    </div>
+
+                    <!-- Right: doctors list -->
+                    <div class="md:w-7/12">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-sm font-semibold text-slate-100 flex items-center gap-2">
+                                <i class="fa-solid fa-user-doctor text-cyan-300"></i>
+                                Dokter Hari Ini
+                            </h3>
+                            <span
+                                class="text-[11px] px-2 py-0.5 rounded-full bg-slate-800/70 border border-slate-700 text-slate-300"
+                            >
+                                Tap untuk melihat detail poli
+                            </span>
+                        </div>
+
+                        <div
+                            id="doctorList"
+                            class="grid sm:grid-cols-2 gap-3 max-h-64 overflow-y-auto pr-1 custom-scrollbar"
+                        >
+                            <!-- renderDoctors() akan mengisi di sini -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: Profil (hidden awal) -->
+            <div
+                id="profil"
+                class="spa-section hidden opacity-0 translate-y-2 transition-all duration-300 ease-out"
+            >
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="space-y-3">
+                        <h2 class="text-lg font-semibold flex items-center gap-2">
+                            <span
+                                class="inline-flex h-7 w-7 rounded-xl bg-cyan-500/15 items-center justify-center"
+                            >
+                                <i class="fa-solid fa-circle-info text-cyan-300 text-xs"></i>
+                            </span>
+                            Profil Klinik
+                        </h2>
+                        <p class="text-sm text-slate-300">
+                            Nexus Care adalah klinik kesehatan modern yang
+                            mengedepankan <span class="font-semibold text-cyan-300">integrasi teknologi</span>
+                            dalam setiap layanan. Mulai dari pendaftaran, pemeriksaan,
+                            hingga pembayaran, semuanya dirancang agar terasa seperti
+                            menggunakan aplikasi — cepat, intuitif, dan minim kertas.
+                        </p>
+                        <p class="text-sm text-slate-300">
+                            Klinik kami menyediakan poli umum, gigi, anak, penyakit
+                            dalam, hingga layanan penunjang seperti laboratorium dan
+                            farmasi, yang terhubung dalam satu ekosistem digital.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <div class="mini-stat">
+                                <p class="text-[10px] text-slate-400">Pasien / hari</p>
+                                <p class="text-base font-semibold">+120</p>
+                            </div>
+                            <div class="mini-stat">
+                                <p class="text-[10px] text-slate-400">Rata-rata tunggu</p>
+                                <p class="text-base font-semibold">15 menit</p>
+                            </div>
+                            <div class="mini-stat">
+                                <p class="text-[10px] text-slate-400">Poli aktif</p>
+                                <p class="text-base font-semibold">10 poli</p>
+                            </div>
+                            <div class="mini-stat">
+                                <p class="text-[10px] text-slate-400">Rating pasien</p>
+                                <p class="text-base font-semibold">4.8/5</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-slate-100 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-heart text-cyan-300"></i>
+                            Visi & Misi
+                        </h3>
+                        <p class="text-sm text-slate-300">
+                            <span class="font-semibold text-cyan-300">Visi:</span>
+                            Menjadi klinik rujukan dengan pengalaman layanan
+                            kesehatan yang <span class="font-semibold">cepat, nyaman, dan terkoneksi</span>
+                            melalui teknologi.
+                        </p>
+                        <ul class="text-sm text-slate-300 space-y-1">
+                            <li class="flex gap-2">
+                                <i class="fa-solid fa-dot-circle text-[8px] text-cyan-300 mt-[6px]"></i>
+                                Menghadirkan layanan yang humanis namun tetap
+                                efisien melalui sistem digital.
+                            </li>
+                            <li class="flex gap-2">
+                                <i class="fa-solid fa-dot-circle text-[8px] text-cyan-300 mt-[6px]"></i>
+                                Menjamin transparansi biaya dan status layanan secara
+                                real-time.
+                            </li>
+                            <li class="flex gap-2">
+                                <i class="fa-solid fa-dot-circle text-[8px] text-cyan-300 mt-[6px]"></i>
+                                Mengintegrasikan rekam medis untuk memudahkan
+                                tindak lanjut pasien.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: HTM (Harga / Tarif / Estimator) -->
+            <div
+                id="htm"
+                class="spa-section hidden opacity-0 translate-y-2 transition-all duration-300 ease-out"
+            >
+                <div class="grid lg:grid-cols-[1.2fr,1fr] gap-4">
+                    <!-- Layanan & harga -->
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h2 class="text-lg font-semibold flex items-center gap-2">
+                                <span
+                                    class="inline-flex h-7 w-7 rounded-xl bg-cyan-500/15 items-center justify-center"
+                                >
+                                    <i class="fa-solid fa-receipt text-cyan-300 text-xs"></i>
+                                </span>
+                                Daftar Layanan & HTM
+                            </h2>
+                            <span class="text-[11px] text-slate-400">
+                                Harga dasar (belum termasuk obat & tindakan lanjutan)
+                            </span>
+                        </div>
+
+                        <div
+                            class="rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden max-h-72 custom-scrollbar"
+                        >
+                            <table class="w-full text-xs">
+                                <thead class="bg-slate-900/90 border-b border-slate-700">
+                                    <tr class="text-left text-slate-300">
+                                        <th class="px-3 py-2">Layanan</th>
+                                        <th class="px-3 py-2 hidden sm:table-cell">Kategori</th>
+                                        <th class="px-3 py-2 text-right">Tarif</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="servicesTableBody" class="divide-y divide-slate-800">
+                                    <!-- script.js akan isi -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Estimator -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-slate-100 flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-cyan-300"></i>
+                            Live Cost Estimator
+                        </h3>
+                        <p class="text-xs text-slate-300">
+                            Pilih layanan, jumlah kunjungan/tindakan, dan opsi
+                            pembayaran untuk melihat estimasi biaya secara langsung.
+                        </p>
+
+                        <form id="costForm" class="space-y-2 text-xs">
+                            <div>
+                                <label
+                                    for="serviceSelect"
+                                    class="block mb-1 text-slate-300"
+                                >
+                                    Pilih Layanan
+                                </label>
+                                <select
+                                    id="serviceSelect"
+                                    class="w-full rounded-xl bg-slate-900/70 border border-slate-700 px-3 py-2 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/60"
+                                >
+                                    <!-- script.js akan isi option -->
+                                </select>
+                            </div>
+
+                            <div class="flex gap-2">
+                                <div class="flex-1">
+                                    <label
+                                        for="quantityInput"
+                                        class="block mb-1 text-slate-300"
+                                    >
+                                        Jumlah (kunjungan/tindakan)
+                                    </label>
+                                    <input
+                                        type="number"
+                                        id="quantityInput"
+                                        min="1"
+                                        value="1"
+                                        class="w-full rounded-xl bg-slate-900/70 border border-slate-700 px-3 py-2 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/60"
+                                    />
+                                </div>
+                                <div class="flex-1">
+                                    <label
+                                        for="paymentType"
+                                        class="block mb-1 text-slate-300"
+                                    >
+                                        Metode Pembayaran
+                                    </label>
+                                    <select
+                                        id="paymentType"
+                                        class="w-full rounded-xl bg-slate-900/70 border border-slate-700 px-3 py-2 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/60"
+                                    >
+                                        <option value="umum">Umum</option>
+                                        <option value="bpjs">BPJS (Administrasi)</option>
+                                        <option value="asuransi">Asuransi Rekanan</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 pt-1">
+                                <input
+                                    id="followUpCheck"
+                                    type="checkbox"
+                                    class="rounded border-slate-700 bg-slate-900 text-cyan-400 focus:ring-cyan-400/80"
+                                />
+                                <label for="followUpCheck" class="text-[11px] text-slate-300">
+                                    Tambahkan estimasi kontrol lanjutan (diskon 30% dari tarif dasar)
+                                </label>
+                            </div>
+
+                            <button
+                                type="button"
+                                id="calculateBtn"
+                                class="w-full mt-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-nexus-teal-soft to-cyan-500 text-slate-900 text-sm font-semibold shadow-md shadow-cyan-500/40 hover:scale-[1.01] active:scale-95 transition"
+                            >
+                                <i class="fa-solid fa-play text-xs"></i>
+                                Hitung Estimasi
+                            </button>
+                        </form>
+
+                        <div
+                            class="rounded-2xl border border-cyan-500/25 bg-slate-900/70 px-3 py-3 text-xs space-y-1"
+                        >
+                            <p class="text-slate-300 font-semibold flex justify-between">
+                                Estimasi Total
+                                <span id="estimateTotal" class="text-base text-emerald-300">
+                                    Rp0
+                                </span>
+                            </p>
+                            <p
+                                id="estimateDetail"
+                                class="text-[11px] text-slate-400 leading-relaxed"
+                            >
+                                Pilih layanan dan isi form untuk melihat detail estimasi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: Kontak -->
+            <div
+                id="kontak"
+                class="spa-section hidden opacity-0 translate-y-2 transition-all duration-300 ease-out"
+            >
+                <div class="grid md:grid-cols-[1.1fr,1fr] gap-4">
+                    <div class="space-y-3">
+                        <h2 class="text-lg font-semibold flex items-center gap-2">
+                            <span
+                                class="inline-flex h-7 w-7 rounded-xl bg-cyan-500/15 items-center justify-center"
+                            >
+                                <i class="fa-solid fa-headset text-cyan-300 text-xs"></i>
+                            </span>
+                            Kontak & Lokasi
+                        </h2>
+
+                        <div class="grid sm:grid-cols-2 gap-3 text-xs">
+                            <div class="contact-card">
+                                <p class="text-[11px] text-slate-400 mb-1">Alamat</p>
+                                <p class="font-medium text-slate-100">
+                                    Jl. Nexus Utama No. 21
+                                </p>
+                                <p class="text-slate-400">
+                                    Kota Sehat, Indonesia 12345
+                                </p>
+                            </div>
+                            <div class="contact-card">
+                                <p class="text-[11px] text-slate-400 mb-1">Kontak</p>
+                                <p class="flex items-center gap-1">
+                                    <i class="fa-solid fa-phone text-cyan-300 text-[10px]"></i>
+                                    (021) 1234 567
+                                </p>
+                                <p class="flex items-center gap-1">
+                                    <i class="fa-brands fa-whatsapp text-cyan-300 text-[10px]"></i>
+                                    0812-3456-7890
+                                </p>
+                                <p class="flex items-center gap-1">
+                                    <i class="fa-solid fa-envelope text-cyan-300 text-[10px]"></i>
+                                    halo@nexuscare.id
+                                </p>
+                            </div>
+                            <div class="contact-card">
+                                <p class="text-[11px] text-slate-400 mb-1">Jam Operasional</p>
+                                <p>Senin - Sabtu</p>
+                                <p>08.00 - 21.00 WIB</p>
+                                <p class="text-slate-400 mt-1">
+                                    IGD 24 jam (khusus kerja sama rumah sakit)
+                                </p>
+                            </div>
+                            <div class="contact-card">
+                                <p class="text-[11px] text-slate-400 mb-1">Media Sosial</p>
+                                <p class="flex items-center gap-2">
+                                    <i class="fa-brands fa-instagram text-pink-400 text-sm"></i>
+                                    @nexuscare.clinic
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i class="fa-brands fa-tiktok text-slate-50 text-sm"></i>
+                                    @nexuscare
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mini map & form -->
+                    <div class="space-y-3">
+                        <div class="rounded-2xl border border-slate-700/70 bg-slate-900/70 p-3">
+                            <p class="text-xs font-semibold text-slate-200 mb-1">
+                                Map (Placeholder)
+                            </p>
+                            <div
+                                class="h-32 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-[11px] text-slate-400 border border-slate-700/80"
+                            >
+                                <i class="fa-solid fa-map-location-dot text-cyan-300 mr-1.5"></i>
+                                Integrasi dengan peta online dapat ditempatkan di sini.
+                            </div>
+                        </div>
+
+                        <div class="rounded-2xl border border-slate-700/70 bg-slate-900/70 p-3">
+                            <p class="text-xs font-semibold text-slate-200 mb-2">
+                                Form Kontak Singkat
+                            </p>
+                            <form class="space-y-2 text-xs">
+                                <input
+                                    type="text"
+                                    placeholder="Nama lengkap"
+                                    class="w-full rounded-xl bg-slate-950/70 border border-slate-700 px-3 py-2 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/60"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Nomor WhatsApp"
+                                    class="w-full rounded-xl bg-slate-950/70 border border-slate-700 px-3 py-2 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/60"
+                                />
+                                <textarea
+                                    rows="3"
+                                    placeholder="Keluhan singkat / pertanyaan"
+                                    class="w-full rounded-xl bg-slate-950/70 border border-slate-700 px-3 py-2 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/60 resize-none"
+                                ></textarea>
+                                <button
+                                    type="button"
+                                    class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-nexus-teal-soft to-cyan-500 text-slate-900 text-sm font-semibold shadow-md shadow-cyan-500/40 hover:scale-[1.01] active:scale-95 transition"
+                                >
+                                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                                    Kirim Pesan
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
